@@ -1,0 +1,1 @@
+java -jar stubs/stubby4j.jar -d stubs/stubs-slt.yaml -l 0.0.0.0 -a 8890 -s 8882 -t 7444 > /dev/null 2>&1 &

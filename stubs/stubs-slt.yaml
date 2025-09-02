@@ -1,0 +1,80 @@
+- request:
+    method: POST
+    url: /commerce/pricing/priced-draft-orders/eligibility
+    headers:
+      content-type: application/json
+    post: ".*\"D6KMDYB8JWH8\".*  "
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+      Access-Control-Allow-Origin: "*"
+    file: eligible-customer-eligibility-service.json
+
+- request:
+    method: POST
+    headers:
+      content-type: application/json
+    url: /commerce/pricing/priced-draft-orders/eligibility
+    post: ".*\"D6KMDYB8JWH9\".*  "
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+      Access-Control-Allow-Origin: "*"
+    file: non-eligible-customer-eligibility-service.json
+
+- request:
+    method: POST
+    url: /commerce/pricing/priced-draft-orders/eligibility
+    headers:
+      content-type: application/json
+    post: ".*\"D6KMDYB8JWGH\".*  "
+  response:
+    status: 400
+    headers:
+      content-type: application/json
+      Access-Control-Allow-Origin: "*"
+
+- request:
+    method: POST
+    url: /commerce/pricing/priced-draft-orders/eligibility
+    headers:
+      content-type: application/json
+    post: ".*\"D6KMDYB8JWQH\".*  "
+  response:
+    status: 500
+    headers:
+      content-type: application/json
+      Access-Control-Allow-Origin: "*"
+
+- request:
+    method: GET
+    url: /pem-ole-services/order-level-events/promotions
+    query:
+      ids: 969777
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: promotions.json
+- request:
+    method: GET
+    url: /pem-ole-services/order-level-events/promotions
+    query:
+      ids: 969788
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: promotions_969788.json
+
+- request:
+    method: GET
+    url: /pem-ole-services/order-level-events/promotions
+    query:
+      ids: 969780
+  response:
+    status: 500
+    headers:
+      content-type: application/json

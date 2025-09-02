@@ -1,0 +1,23 @@
+apply plugin: 'checkstyle'
+
+checkstyle {
+    toolVersion '9.3'
+    maxWarnings = 0
+    ignoreFailures false
+    configFile file("${rootDir}/config/checkstyle/checkstyle.xml")
+    checkstyleTest.enabled = true
+}
+
+checkstyleMain {
+    source = 'src/main/java'
+}
+checkstyleTest {
+    source = ['src/test/functional/java', 'src/test/unit/java']
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
